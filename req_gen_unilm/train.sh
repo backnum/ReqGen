@@ -3,7 +3,7 @@ OUTPUT_DIR=tmp/new_finetuned_models/; \
 MODEL_RECOVER_PATH=tmp/unilmv1-base-cased-uav.bin; \
 BERT_MODEL = tmp/bert-base-cased.tar.gz;\
 export PYTORCH_PRETRAINED_BERT_CACHE=tmp/bert-cased-pretrained-cache; \
-CUDA_VISIBLE_DEVICES=0,1,2,3 python unilm/src/biunilm/run_seq2seq.py --do_train --num_workers 0 \
+CUDA_VISIBLE_DEVICES=0 python unilm/src/biunilm/run_seq2seq.py --do_train --num_workers 0 \
   --bert_model bert-base-cased --new_segment_ids \
   --data_dir ${DATA_DIR} \
   --src_file uav.src.train.txt \
